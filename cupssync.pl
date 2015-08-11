@@ -100,7 +100,7 @@ for my $key_printers ( keys %{$hash->{ $primary }} ) {
       my $output = `$cmd`;
     }
   }else{ # If it doesn't exist on the secondary, add it
-    my $cmd = "/usr/sbin/lpadmin -E -p $key_printers -v $deviceuri";
+    my $cmd = "/usr/sbin/lpadmin -p $key_printers -E -v $deviceuri";
     if (defined $location) {
       $location =~ s/"/\\\\\\"/g;
       $cmd .= " -L \\\"$location\\\"";
